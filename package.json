@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/server.js",
+    "dev": "nodemon -L src/server.js",
+    "build": "sucrase ./src -d ./dist --transforms imports export"
   },
   "author": "Bernardo Casanova",
   "license": "ISC",
