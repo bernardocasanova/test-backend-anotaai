@@ -48,6 +48,7 @@ url: http://localhost:3000/category
 > Show a specific category
 ```shell
 Request type: GET
+Parameter: id (category id)
 url: http://localhost:3000/category/:id
 ```
 
@@ -68,6 +69,7 @@ url: http://localhost:3000/category
 Request type: PUT
 Attributes:
     name: string
+Parameter: id (category id)
 Json example:
 {
     "name": "Update category A"
@@ -78,6 +80,7 @@ url: http://localhost:3000/category/:id
 > Delete category
 ```shell
 Request type: DELETE
+Parameter: id (category id)
 url: http://localhost:3000/category/:id
 ```
 
@@ -91,6 +94,7 @@ url: http://localhost:3000/product
 > Show a specific product
 ```shell
 Request type: GET
+Parameter: id (product id)
 url: http://localhost:3000/product/:id
 ```
 
@@ -120,6 +124,7 @@ Attributes:
     description: string,
     price: number,
     category: objectId
+Parameter: id (product id)
 Json example:
 {
     "title": "Update Product E",
@@ -131,6 +136,7 @@ url: http://localhost:3000/product/:id
 > Delete product
 ```shell
 Request type: DELETE
+Parameter: id (product id)
 url: http://localhost:3000/product/:id
 ```
 
