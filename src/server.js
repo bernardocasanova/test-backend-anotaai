@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import app from './app';
 
 const {
-  DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_NAME, SERVER_PORT,
+  DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_NAME, APP_PORT,
 } = process.env;
 
 mongoose
@@ -16,7 +16,7 @@ mongoose
   .catch((e) => console.log(e));
 
 app.on('mongodb', () => {
-  app.listen(SERVER_PORT, () => {
-    console.log(`Connected, listening on port ${SERVER_PORT}`);
+  app.listen(APP_PORT, () => {
+    console.log(`Connected, listening on port ${APP_PORT}`);
   });
 });

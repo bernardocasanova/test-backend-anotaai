@@ -4,7 +4,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Application routes
-// import request from './routes/request';
+import product from './routes/product';
+import category from './routes/category';
+import populate from './routes/populate';
 
 class App {
   constructor() {
@@ -19,7 +21,9 @@ class App {
   }
 
   routes() {
-    // this.app.use('/', request);
+    this.app.use('/product/', product);
+    this.app.use('/category/', category);
+    this.app.use('/populate/', populate);
   }
 }
 
