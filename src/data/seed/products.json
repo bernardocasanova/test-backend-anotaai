@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Product A",
+    "description": "Description for product A",
+    "price": 100
+  },
+  {
+    "title": "Product B",
+    "description": "Description for product B",
+    "price": 200
+  },
+  {
+    "title": "Product C",
+    "description": "Description for product C",
+    "price": 300
+  },
+  {
+    "title": "Product D",
+    "description": "Description for product D",
+    "price": 400
+  },
+  {
+    "title": "Product E",
+    "description": "Description for product E",
+    "price": 500
+  },
+  {
+    "title": "Product F",
+    "description": "Description for product F",
+    "price": 600
+  },
+  {
+    "title": "Product G",
+    "description": "Description for product G",
+    "price": 700
+  },
+  {
+    "title": "Product H",
+    "description": "Description for product H",
+    "price": 800
+  },
+  {
+    "title": "Product I",
+    "description": "Description for product I",
+    "price": 900
+  },
+  {
+    "title": "Product J",
+    "description": "Description for product J",
+    "price": 1000
+  }
+]
