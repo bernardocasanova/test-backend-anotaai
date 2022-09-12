@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "nodemon -L src/server.js",
-    "build": "sucrase ./src -d ./dist --transforms imports export"
+    "build": "sucrase ./src -d ./dist --transforms imports export",
+    "postbuild": "copyfiles --flat ./src/data/seed/* ./dist/data/seed",
+    "seed": "node dist/data/seed.js"
   },
   "author": "Bernardo Casanova",
   "license": "ISC",
@@ -18,6 +20,7 @@
     "sucrase": "^3.25.0"
   },
   "dependencies": {
+    "copyfiles": "^2.4.1",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "mongoose": "^6.6.0"
