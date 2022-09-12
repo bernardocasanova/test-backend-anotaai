@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    ports:
+    - ${DB_PORT}:27017
+    environment:
+      MONGO_INITDB_DATABASE: ${DB_NAME}
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
+
+  app:
+    image: node:alpine
+    container_name: app
+    build: .
+    restart: always
+    tty: true
+    env_file:
+    - .env
+    depends_on:
+    - mongodb
+    ports:
+    - ${APP_PORT}:${APP_PORT}
+    volumes:
+    - .:/usr/src/app
+    - /usr/src/app/node_modules
+    working_dir: /usr/src/app
+    command: npm run dev
