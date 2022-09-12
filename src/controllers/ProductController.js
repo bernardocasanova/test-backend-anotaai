@@ -1,11 +1,27 @@
 import Product from '../models/Product';
 
 class ProductController {
+  /**
+   * Show all products
+   *
+   * @param object req is an object containing information about the HTTP request
+   * @param object In response to req, you use res to send back the desired HTTP response.
+   *
+   * @return json object with products
+  */
   async index(req, res) {
     const products = await Product.find().populate('category', 'name');
     return res.json(products);
   }
 
+  /**
+   * Create a new product
+   *
+   * @param object req is an object containing information about the HTTP request
+   * @param object In response to req, you use res to send back the desired HTTP response.
+   *
+   * @return json object with new product or a message error
+  */
   async store(req, res) {
     try {
       const product = await Product.create(req.body);
@@ -22,6 +38,14 @@ class ProductController {
     }
   }
 
+  /**
+   * Show a specific product
+   *
+   * @param object req is an object containing information about the HTTP request
+   * @param object In response to req, you use res to send back the desired HTTP response.
+   *
+   * @return json object with product or a message error
+  */
   async show(req, res) {
     try {
       const { id } = req.params;
@@ -54,6 +78,14 @@ class ProductController {
     }
   }
 
+  /**
+   * Update a specific product
+   *
+   * @param object req is an object containing information about the HTTP request
+   * @param object In response to req, you use res to send back the desired HTTP response.
+   *
+   * @return json object with updated product or a message error
+  */
   async update(req, res) {
     try {
       const { id } = req.params;
@@ -87,6 +119,14 @@ class ProductController {
     }
   }
 
+  /**
+   * Delete a specific product
+   *
+   * @param object req is an object containing information about the HTTP request
+   * @param object In response to req, you use res to send back the desired HTTP response.
+   *
+   * @return json success or error message
+  */
   async delete(req, res) {
     try {
       const { id } = req.params;
@@ -118,6 +158,14 @@ class ProductController {
     }
   }
 
+  /**
+   * Filter request by a product title or category name
+   *
+   * @param object req is an object containing information about the HTTP request
+   * @param object In response to req, you use res to send back the desired HTTP response.
+   *
+   * @return json object with filtered results or a message error
+  */
   async filter(req, res) {
     try {
       const parameter = req.query;
